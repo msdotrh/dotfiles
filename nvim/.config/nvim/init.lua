@@ -34,12 +34,13 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 })
 -- Default options:
 require("kanagawa")
-require("competitest").setup() -- to use default configuration
-require("compiler")
-require("overseer")
 require("cord")
 require("transparent")
 
 -- setup must be called before loading
 
 vim.cmd("colorscheme tokyonight-storm")
+
+if vim.g.neovide then
+  vim.o.guifont = "IosevkaTermSlab Nerd Font: h16"
+end

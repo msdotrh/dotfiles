@@ -70,7 +70,7 @@ build() {
     -Wall \
     -g \
     -march=native \
-    -std=c++20 \
+    -std=c++23 \
     -pipe \
     -fuse-ld=lld \
     "$src" -o "$base"
@@ -103,4 +103,5 @@ build() {
 
 # Created by `pipx` on 2025-12-07 12:28:25
 export PATH="$PATH:/home/dongfengpo/.local/bin"
+export VCPKG_ROOT="$HOME/vcpkg"
 

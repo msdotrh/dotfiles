@@ -14,24 +14,12 @@ capabilities.textDocument.completion.completionItem.snippetSupport = false
 
 -- clangd without placeholders
 lspconfig.clangd.setup({
-  cmd = { "clangd", "--header-insertion=never" },
+  cmd = { "clangd", "--header-insertion=never", "-j=4", "--completion-style=detailed" },
   capabilities = capabilities,
 })
 
 require("snacks")
 
--- Hyprlang LSP
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-  pattern = { "*.hl", "hypr*.conf" },
-  callback = function(event)
-    print(string.format("starting hyprls for %s", vim.inspect(event)))
-    vim.lsp.start({
-      name = "hyprlang",
-      cmd = { "hyprls" },
-      root_dir = vim.fn.getcwd(),
-    })
-  end,
-})
 -- Default options:
 require("kanagawa")
 require("cord")
@@ -39,7 +27,7 @@ require("transparent")
 
 -- setup must be called before loading
 
-vim.cmd("colorscheme tokyonight-storm")
+vim.cmd("colorscheme kanagawa-wave")
 
 if vim.g.neovide then
   vim.o.guifont = "IosevkaTermSlab Nerd Font: h16"

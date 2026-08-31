@@ -40,6 +40,7 @@ local snippets = {
   s("cp", {
     t({
       "#include <bits/stdc++.h>",
+      "// #include <@msr.h>",
       "using namespace std;",
       "template <typename T> using vec = vector<T>;",
       "using ll = long long;",

@@ -5,12 +5,5 @@
 vim.opt.clipboard = "unnamedplus"
 
 -- Disable only for C++
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "cpp", "cxx", "cc", "hpp", "hxx" },
-  callback = function()
-    vim.g.autoformat = false
-  end,
-})
-
 vim.o.exrc = true
 vim.o.secure = true

@@ -14,7 +14,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = false
 
 -- clangd without placeholders
 lspconfig.clangd.setup({
-  cmd = { "clangd", "--header-insertion=never", "-j=4", "--completion-style=detailed" },
+  cmd = { "clangd", "-j=4", "--completion-style=detailed" },
   capabilities = capabilities,
 })
 

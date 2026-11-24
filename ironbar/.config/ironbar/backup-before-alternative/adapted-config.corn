@@ -1,0 +1,39 @@
+let {
+    $workspaces = {
+        type = "workspaces"
+        name_map = {
+            "1" = "𠬠"
+            "2" = "𠄩"
+            "3" = "𠀧"
+            "4" = "𦊚"
+            "5" = "𠄼"
+            "6" = "𦒹"
+            "7" = "𦉱"
+            "8" = "𠔭"
+            "9" = "𠃩"
+            "10" = "𨒒"
+        }
+        favorites = [ "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" ]
+    }
+
+    $focused = {
+        type = "focused"
+        show_icon = false
+        show_title = true
+        truncate.mode = "end"
+        truncate.max_length = 40
+    }
+
+    $clock = {
+        type = "clock"
+        format = "%H:%M"
+    }
+
+    $tray = { type = "tray" }
+} in {
+    position = "top"
+    height = 28
+    start = [ $workspaces ]
+    center = [ $focused ]
+    end = [ $tray $clock ]
+}

@@ -2,6 +2,17 @@ position: top
 height: 24
 start:
 - type: workspaces
+  name_map:
+    "1": 𠬠
+    "2": 𠄩
+    "3": 𠀧
+    "4": 𦊚
+    "5": 𠄼
+    "6": 𦒹
+    "7": 𦉱
+    "8": 𠔭
+    "9": 𠃩
+    "10": 𨒒
   favorites:
   - "1"
   - "2"

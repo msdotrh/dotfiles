@@ -29,9 +29,9 @@ hl.monitor({
 })
 
 hl.monitor({
-	output = "DP-DESK",
+	output = "eDP-1",
 	mode = "prefered",
-	position = "auto",
+	position = "auto-right",
 	scale = "auto",
 })
 
@@ -55,10 +55,13 @@ local menu = "rofi -show drun"
 --
 hl.on("hyprland.start", function()
 	hl.exec_cmd(terminal)
+	hl.exec_cmd("fcitx5 -d")
 	hl.exec_cmd("nm-applet")
-	hl.exec_cmd("ironbar & firefox")
+	hl.exec_cmd("dunst")
+	hl.exec_cmd("waybar & firefox")
 	hl.exec_cmd("discord")
 	hl.exec_cmd("awww-daemon")
+	hl.exec_cmd("snappy-switcher --daemon")
 end)
 
 -------------------------------
@@ -262,6 +265,8 @@ hl.device({
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
+hl.bind("ALT + TAB", hl.dsp.exec_cmd("snappy-switcher next"))
+hl.bind("ALT + SHIFT + TAB", hl.dsp.exec_cmd("snappy-switcher prev"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("firefox"))
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
@@ -270,6 +275,7 @@ hl.bind(
 	mainMod .. " + M",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
+hl.bind(mainMod .. " + SHIFT + M", hl.dsp.workspace.move({ monitor = "+1" }))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(menu))
@@ -298,7 +304,7 @@ end
 
 -- Example special workspace (scratchpad)
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. "+ SHIFT+  S", hl.dsp.exec_cmd('grim -g "$(slurp)" -t ppm - | satty --filename - --fullscreen'))
+hl.bind(mainMod .. "+ SHIFT+  S", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))

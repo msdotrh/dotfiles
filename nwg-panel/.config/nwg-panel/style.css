@@ -1,0 +1,75 @@
+* {
+    font-family: "Segoe UI", "Noto Sans", sans-serif;
+    font-size: 13px;
+}
+
+#windows-taskbar {
+    background-color: rgba(24, 28, 36, 0.94);
+    color: #f4f6fb;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+}
+
+button {
+    color: #f4f6fb;
+    background: transparent;
+    border: 0;
+    border-radius: 9px;
+    box-shadow: none;
+    min-height: 36px;
+    padding: 0 8px;
+}
+
+button:hover,
+#task-box:hover {
+    background-color: rgba(255, 255, 255, 0.11);
+}
+
+#windows-start {
+    color: #60a5fa;
+    padding: 0 12px;
+}
+
+#windows-start:hover {
+    background-color: rgba(96, 165, 250, 0.16);
+}
+
+#windows-pinned-app {
+    min-width: 38px;
+    padding: 0 7px;
+}
+
+#task-box,
+#task-box-focused {
+    color: #f4f6fb;
+    border-radius: 9px;
+    min-height: 36px;
+    padding: 0 9px;
+}
+
+#task-box-focused {
+    background-color: rgba(255, 255, 255, 0.13);
+    box-shadow: inset 0 -3px 0 #60a5fa;
+}
+
+#task-box-icon {
+    margin: 0 3px;
+}
+
+#windows-tray,
+#windows-clock {
+    color: #f4f6fb;
+    padding: 0 8px;
+}
+
+#windows-clock {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#windows-controls {
+    background-color: #252b36;
+    color: #f4f6fb;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+}

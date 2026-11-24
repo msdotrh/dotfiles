@@ -1,0 +1,66 @@
+* {
+    font-family: "Iosevka Nerd Font", "HAN NOM A", "HAN NOM B", "Iosevka NF", monospace;
+    font-size: 13px;
+}
+
+window#waybar {
+    background: rgba(10, 10, 10, 0.5);
+    color: #cdd6f4;
+    border-top: 1px solid #45475a;
+}
+
+button {
+    border: 0;
+    border-radius: 6px;
+    box-shadow: none;
+    color: #cdd6f4;
+    padding: 0 9px;
+}
+
+button:hover {
+    background: #313244;
+}
+
+#workspaces button {
+    background: transparent;
+    color: #a6adc8;
+    margin: 4px 2px;
+    padding: 0 9px;
+}
+
+#workspaces .workspace-label {
+    font-family: "HanNomGothic", "HAN NOM A", "HAN NOM B";
+    font-size: 20px;
+}
+
+#workspaces button.active {
+    background: #45475a;
+    color: #cdd6f4;
+}
+
+#workspaces .taskbar-window {
+    background: transparent;
+    margin: 3px 2px;
+    padding: 0 4px;
+}
+
+#workspaces .taskbar-window.active {
+    background: #45475a;
+    border-radius: 6px;
+}
+
+#pulseaudio,
+#network,
+#battery,
+#clock,
+#tray {
+    padding: 0 9px;
+}
+
+#battery.warning {
+    color: #f9e2af;
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+}

@@ -1,0 +1,79 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "height": 36,
+  "spacing": 8,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": [],
+  "modules-right": ["cpu", "disk", "pulseaudio", "network", "battery", "clock", "tray"],
+
+  "hyprland/workspaces": {
+    "format": "{icon} {windows}",
+    "format-icons": {
+      "1": "𠬠",
+      "2": "𠄩",
+      "3": "𠀧",
+      "4": "𦊚",
+      "5": "𠄼",
+      "6": "𦒹",
+      "7": "𦉱",
+      "8": "𠔭",
+      "9": "𠃩",
+      "10": "𨒒",
+      "default": "?"
+    },
+    "active-only": false,
+    "persistent-only": true,
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    },
+    "workspace-taskbar": {
+      "enable": true,
+      "update-active-window": true,
+      "format": "{icon}",
+      "icon-size": 22,
+      "icon-theme": ["Tela-circle", "hicolor"],
+      "on-click-window": "hyprctl dispatch 'hl.dsp.focus({ window = \"address:{address}\" })'"
+    }
+  },
+
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "Muted",
+    "format-icons": {"default": ["", "", ""]},
+    "on-click": "pavucontrol"
+  },
+
+  "cpu": {
+    "format": "CPU {usage}%",
+    "tooltip-format": "CPU usage: {usage}%"
+  },
+
+  "disk": {
+    "path": "/home/",
+    "format": "Disk {percentage_used}%",
+    "tooltip-format": "Disk usage: {used} / {total}"
+  },
+
+  "network": {
+    "format-wifi": "{essid} ",
+    "format-ethernet": "{ipaddr} ",
+    "format-disconnected": "",
+    "tooltip-format": "{ifname}: {ipaddr}",
+    "on-click": "kitty -- nmtui"
+  },
+
+  "battery": {
+    "states": {"warning": 30, "critical": 15},
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "clock": {
+    "format": "{:%Y-%m-%d %H:%M}",
+    "tooltip-format": "<tt>{calendar}</tt>"
+  },
+
+  "tray": {"spacing": 8}
+}

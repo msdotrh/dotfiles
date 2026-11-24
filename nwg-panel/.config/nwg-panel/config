@@ -1,0 +1,118 @@
+[
+  {
+    "name": "windows-taskbar",
+    "output": "",
+    "layer": "top",
+    "position": "bottom",
+    "controls": "right",
+    "width": 100,
+    "width-as-percentage": true,
+    "height": 46,
+    "margin-top": 0,
+    "margin-bottom": 8,
+    "padding-horizontal": 10,
+    "padding-vertical": 0,
+    "spacing": 4,
+    "items-padding": 2,
+    "icons": "dark",
+    "css-name": "windows-taskbar",
+    "modules-left": ["button-start"],
+    "modules-center": [
+      "button-browser",
+      "button-files",
+      "button-terminal",
+      "hyprland-taskbar"
+    ],
+    "modules-right": ["tray", "clock"],
+    "controls-settings": {
+      "components": ["volume", "brightness", "battery"],
+      "commands": {"battery": ""},
+      "show-values": true,
+      "interval": 1,
+      "icon-size": 18,
+      "hover-opens": false,
+      "leave-closes": true,
+      "click-closes": false,
+      "css-name": "windows-controls",
+      "custom-items": [
+        {"name": "Panel settings", "icon": "nwg-panel", "cmd": "nwg-panel-config"}
+      ],
+      "menu": {
+        "name": "Power",
+        "icon": "system-shutdown-symbolic",
+        "items": [
+          {"name": "Lock", "cmd": "hyprlock"},
+          {"name": "Log out", "cmd": "hyprctl dispatch exit"},
+          {"name": "Reboot", "cmd": "systemctl reboot"},
+          {"name": "Shut down", "cmd": "systemctl poweroff"}
+        ]
+      }
+    },
+    "tray": {
+      "root-css-name": "windows-tray",
+      "inner-css-name": "windows-tray-inner"
+    },
+    "clock": {
+      "format": "%H:%M\\n%d/%m/%Y",
+      "tooltip-text": "",
+      "on-left-click": "",
+      "on-middle-click": "",
+      "on-right-click": "",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "css-name": "windows-clock",
+      "interval": 1
+    },
+    "hyprland-taskbar": {
+      "name-max-len": 24,
+      "image-size": 22,
+      "workspaces-spacing": 8,
+      "client-padding": 4,
+      "show-app-icon": true,
+      "show-app-name": false,
+      "show-app-name-special": false,
+      "show-layout": false,
+      "all-outputs": false,
+      "all-workspaces": false,
+      "show-ws-names": false,
+      "mark-xwayland": false
+    },
+    "button-start": {
+      "command": "rofi -show drun",
+      "icon": "start-here-symbolic",
+      "label": "",
+      "label-position": "right",
+      "css-name": "windows-start",
+      "icon-size": 25
+    },
+    "button-browser": {
+      "command": "google-chrome-stable",
+      "icon": "google-chrome",
+      "label": "",
+      "label-position": "right",
+      "css-name": "windows-pinned-app",
+      "icon-size": 23
+    },
+    "button-files": {
+      "command": "thunar",
+      "icon": "system-file-manager",
+      "label": "",
+      "label-position": "right",
+      "css-name": "windows-pinned-app",
+      "icon-size": 23
+    },
+    "button-terminal": {
+      "command": "kitty",
+      "icon": "utilities-terminal",
+      "label": "",
+      "label-position": "right",
+      "css-name": "windows-pinned-app",
+      "icon-size": 23
+    },
+    "exclusive-zone": true,
+    "sigrt": 64,
+    "use-sigrt": false,
+    "menu-start": "off",
+    "hyprland-workspaces": {}
+  }
+]

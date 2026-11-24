@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+package_root="$(cd -- "$(dirname -- "$(readlink -f -- "$0")")/../.." && pwd)"
+export PYTHONPATH="$package_root/python-compat${PYTHONPATH:+:$PYTHONPATH}"
+exec /usr/bin/nwg-panel "$@"

@@ -1,116 +1,159 @@
-:root {
-  --color-dark-primary: #1c1c1c;
-  --color-dark-secondary: #2d2d2d;
-  --color-white: #fff;
-  --color-active: #6699cc;
-  --color-urgent: #8f0a0a;
-
-  --margin-lg: 1em;
-  --margin-sm: 0.5em;
-}
-
 * {
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
-  background-image: none;
-  font-family: "Iosevka Nerd Font", monospace;
+    font-family: JetBrains Mono NF;
+    font-size: 14px;
+    color: #f59a9a;
 }
 
-scale>trough {
-  background-color: var(--color-dark-secondary);
+.tray, .battery {
+    transition: 0.25s;
 }
 
-scale>trough>highlight {
-  background-color: var(--color-active);
-  border-style: solid;
-  border-color: var(--color-active);
-  border-width: 0.2em;
+.start, .end, .sysinfo, .tray *, .box, .music *, .battery *, .custom, .network_manager {
+    background-color: transparent;
+    border: none;
 }
 
-scale>trough>slider {
-  background-color: var(--color-white);
+.updates, .cava, .play-pause, .wlogout, .sysinfo .item:nth-child(n), .network_manager, .battery, .tray, .volume, .clock, .focused *, .script {
+    background: #141216;
+    opacity: 0.7;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px;
 }
 
-switch>slider {
-  background-color: var(--color-white);
+.updates, .cava, .play-pause, .script, .wlogout {
+    margin-right: 10px;
 }
 
-switch:checked {
-  background-color: var(--color-active);
+.popup, .updates, .cava, .play-pause, .wlogout, .sysinfo .item:nth-child(n), .network_manager, .battery, .tray, .volume, .popup-volume button, .clock, .popup-clock .calendar, .focused *, .script, tooltip.background {
+    border-radius: 10px;
 }
 
-switch:not(:checked) {
-  background-color: var(--color-dark-secondary);
+.cava, .play-pause, .wlogout, .sysinfo .item:nth-child(n), .network_manager, .battery, .tray, .volume, .focused *, .script {
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
-.background,
-#bar {
-  background-color: rgba(28, 28, 28, 0.5);
+.wlogout, .sysinfo .item:nth-child(n), .network_manager, .battery, .tray, .volume, .clock, .focused *, .script {
+    padding-left: 10px;
 }
 
-popover,
-popover contents,
-calendar,
-popover .view {
-  background-color: var(--color-dark-primary);
+.sysinfo .item:nth-child(n), .network_manager, .battery, .tray, .volume, .clock, .focused *, .script {
+    padding-right: 10px;
 }
 
-box,
-button,
-label {
-  background-color: #0000;
-  color: var(--color-white);
+.network_manager, .battery, .tray, .clock, .weather, .arch {
+    margin-right: 10px;
 }
 
-button {
-  padding-left: var(--margin-sm);
-  padding-right: var(--margin-sm);
+.network_manager {
+    margin-left: 11px;
+    padding-right: 15px;
 }
 
-button:hover,
-button:active,
-*:selected {
-  background-color: var(--color-dark-secondary);
+.tray, .weather {
+    margin-left: 0px;
 }
 
-#end>*+* {
-  margin-left: var(--margin-lg);
+.script, .updates {
+    margin-left: 8px;
 }
 
-.sysinfo>*+* {
-  margin-left: var(--margin-sm);
+.volume, .focused *, .clock {
+    margin-left: 10px;
+}
+
+.updates, .focused *, .volume, .script, .button, .play-pause, .clock, .sysinfo *, .tray, .wlogout, .network_manager {
+    border-top: 1px solid #996b3d;
+    border-left: 1px solid #996b3d;
+    border-bottom: 1px solid #5b4e40;
+    border-right: 1px solid #5b4e40;
+}
+
+.volume:hover, .button:hover, .play-pause:hover, .clock:hover, .wlogout:hover, .tray:hover, .updates:hover {
+    border-top: 1px solid #ffb266;
+    border-left: 1px solid #ffb266;
+    border-bottom: 1px solid #996b6b;
+    border-right: 1px solid #996b6b;
+}
+
+.popup {
+    border: 2px solid #ff6666;
+    background-color: rgba(34, 31, 38, 0.8);
+    padding: 1em;
+}
+
+.cava, .play-pause, .popup-volume {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.background {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.updates {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.wlogout {
+    padding-right: 7px;
+    padding-top: 2px;
+}
+
+.wlogout * {
+    font-family: Material Symbols Rounded;
+    font-weight: bold;
+}
+
+/* cpu */
+.sysinfo .item:nth-child(1) {
+    color: #ac82e9;
+}
+/* memory */
+.sysinfo .item:nth-child(2) {
+    color: #ff7d7d;
+}
+/* temp */
+.sysinfo .item:nth-child(3) {
+    color: #f7bbbb;
+}
+/* net up/down */
+.sysinfo .item:nth-child(4) {
+    color: #6a9e9e;
+}
+
+.popup-volume {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.popup-volume button, .popup-clock .calendar {
+    background-color: rgba(26, 27, 38, 0.8);
 }
 
 .clock {
-  font-weight: bold;
+    padding-bottom: 3px;
 }
 
 .popup-clock .calendar-clock {
-  font-size: 2.0em;
+    font-size: 2em;
+    padding-bottom: 0.1em;
 }
 
-.popup-clock .calendar .today {
-  background-color: var(--color-active);
+.popup-clock .calendar {
+    font-weight: bolder;
 }
 
-/* Visible workspace */
-.workspaces .item.visible {
-  background-color: #ffffff;
-  color: #1c1c1c;
+.popup-clock .calendar .header {
+    border-top: 1px solid #424242;
 }
 
-/* Focused workspace */
-.workspaces .item.focused,
-.workspaces .item.focused:hover,
-.workspaces .item.focused:active {
-  background-color: #d3d3d3;
-  color: #1c1c1c;
-  box-shadow: inset 0 -1px var(--color-active);
+.popup-clock .calendar:selected {
+    background-color: #993d3d;
 }
 
-/* Urgent workspace */
-.workspaces .item.urgent {
-  background-color: var(--color-urgent);
-  color: var(--color-white);
+.epoch, .arch, .volume {
+    margin-right: 2px;
 }
